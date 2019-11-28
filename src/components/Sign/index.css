@@ -1,0 +1,16 @@
+.sign {
+    width: 25px;
+    height: 25px;
+    align-self: center;
+    border-radius: 3px;
+    border: 1px solid gray;
+    font-size: 1.5em;
+}
+
+.disabled {
+    border: none;
+}
+
+.error {
+    border: 1px solid red;
+}

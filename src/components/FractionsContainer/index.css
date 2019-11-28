@@ -1,0 +1,11 @@
+.fraction-container {
+    display: flex;  
+}
+
+#add-fraction {
+    padding: 15px 25px;
+    border: 1px solid green;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}

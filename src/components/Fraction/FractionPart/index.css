@@ -1,0 +1,16 @@
+:root {
+    --fraction-width: 40px;
+}
+
+.fraction__part {
+    width: var(--fraction-width);
+    height: var(--fraction-width);
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 2px;
+}
+
+.fraction__part input {
+    font-size: 1.5em;
+}

@@ -27,12 +27,12 @@ export function calculate(fract1, sign, fract2) {
     const [n2, d2] = fract2
     if(d1 !== d2) {
     	const r = [n1*d2 + n2*d1, d1*d2]
-      console.log(r)
+      return r;
     } else {
     	const r = [n1+n2, d1]
       return r;
     }
-  } else if (sign === '*') {
+  } else if (sign === 'x') {
     if(isNegative(fract1)) fract1 = transformNegative(fract1)
     if(isNegative(fract2)) fract2 = transformNegative(fract2)
   	const [n1, d1] = fract1
@@ -43,6 +43,6 @@ export function calculate(fract1, sign, fract2) {
   	[fract2[0], fract2[1]] = [fract2[1], fract2[0]]
     if(isNegative(fract1)) fract1 = transformNegative(fract1)
     if(isNegative(fract2)) fract2 = transformNegative(fract2)
-    return calculate(fract1, '*', fract2)
+    return calculate(fract1, 'x', fract2)
   }
 }

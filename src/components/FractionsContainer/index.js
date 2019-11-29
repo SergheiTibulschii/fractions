@@ -5,16 +5,13 @@ import Fraction from '../Fraction'
 import Sign from '../Sign'
 import './index.css'
 
-import { calculate } from '../../utils'
+import { process } from '../../utils/base'
 
 const fracts = [
     [3, 5], [5,7], [5,9]
 ]
 const constraints = ['+', '/', '-', 'x']
-const signPriority = {
-    low: ['+', '-'],
-    high: ['/', 'x']
-}
+
 function FractionsContainer(props) {
     const [fractions, setFractions] = useState(fracts)
     const [numResult, setNumResult] = useState('?')
@@ -24,20 +21,15 @@ function FractionsContainer(props) {
 
     useEffect(() => {
         if(fractions.length - 1 === signs.filter(s => s).length) {
-            const [n ,d] = calculate(fractions[0], signs[0], fractions[1])
-            console.log(n, d)
-            // setNumResult(n)
-            // setDenomResult(d)
+            const [n, d] = process(JSON.stringify(fractions), Array.from(signs))
+            setNumResult(n)
+            setDenomResult(d)
         }
         else {
             setNumResult('?')
             setDenomResult('?')
         }
     }, [fractions, signs])
-
-    const prepareGroups = (fractionList, signList) => {
-        
-    }
 
     const handleDenomChange = (evt, index) => {
         const { value } = evt.target
